@@ -49,10 +49,39 @@ public class MovieRatingSystem {
         boolean foundDisappointment = (rating1 < 4 || rating2 < 4 || rating3 < 4 || rating4 < 4 || rating5 < 4); // boolean statement to check if any of the ratings for the movies is 4 or below
 
         if (foundMasterpiece) {
-            System.out.println("Wow! You found a masterpiece.");
+            if (rating1 == 10) {
+                System.out.println("Wow! You found a masterpiece: " + movie1 + " with a rating of " + rating1);
+            }
+            if (rating2 == 10) {
+                System.out.println("Wow! You found a masterpiece: " + movie2 + " with a rating of " + rating2);
+            }
+            if (rating3 == 10) {
+                System.out.println("Wow! You found a masterpiece: " + movie3 + " with a rating of " + rating3);
+            }
+            if (rating4 == 10) {
+                System.out.println("Wow! You found a masterpiece: " + movie4 + " with a rating of " + rating4);
+            }
+            if (rating5 == 10) {
+                System.out.println("Wow! You found a masterpiece: " + movie5 + " with a rating of " + rating5);
+            }
         }
+
         if (foundDisappointment) {
-            System.out.println("That movie didn’t impress you much.");
+            if (rating1 < 4) {
+                System.out.println("That movie didn't impress you much: " + movie1 + " with a rating of " + rating1);
+            }
+            if (rating2 < 4) {
+                System.out.println("That movie didn't impress you much: " + movie2 + " with a rating of " + rating2);
+            }
+            if (rating3 < 4) {
+                System.out.println("That movie didn't impress you much: " + movie3 + " with a rating of " + rating3);
+            }
+            if (rating4 < 4) {
+                System.out.println("That movie didn't impress you much: " + movie4 + " with a rating of " + rating4);
+            }
+            if (rating5 < 4) {
+                System.out.println("That movie didn't impress you much: " + movie5 + " with a rating of " + rating5);
+            }
         }
 
         // Identify Consistent Ratings using logical operators
