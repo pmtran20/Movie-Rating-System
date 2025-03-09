@@ -8,29 +8,33 @@ public class MovieRatingSystem {
         System.out.print("Enter your name: ");
         String userName = scanner.nextLine();
 
+        // Setting up array
+        String[] movies = new String[5];
+        int[] ratings = new int[5];
+
         // Ask for 5 movies and their ratings
         System.out.print("Enter the name of the first movie: ");
-        String movie1 = scanner.nextLine();
-        int rating1 = getValidRating(scanner, movie1);
+        movies[0] = scanner.nextLine();
+        ratings[0] = getValidRating(scanner, movies[0]);
 
         System.out.print("Enter the name of the second movie: ");
-        String movie2 = scanner.nextLine();
-        int rating2 = getValidRating(scanner, movie2);
+        movies[1] = scanner.nextLine();
+        ratings[1] = getValidRating(scanner, movies[1]);
 
         System.out.print("Enter the name of the third movie: ");
-        String movie3 = scanner.nextLine();
-        int rating3 = getValidRating(scanner, movie3);
+        movies[2] = scanner.nextLine();
+        ratings[2] = getValidRating(scanner, movies[2]);
 
         System.out.print("Enter the name of the fourth movie: ");
-        String movie4 = scanner.nextLine();
-        int rating4 = getValidRating(scanner, movie4);
+        movies[3] = scanner.nextLine();
+        ratings[3] = getValidRating(scanner, movies[3]);
 
         System.out.print("Enter the name of the fifth movie: ");
-        String movie5 = scanner.nextLine();
-        int rating5 = getValidRating(scanner, movie5);
+        movies[4] = scanner.nextLine();
+        ratings[4] = getValidRating(scanner, movies[4]);
 
         // Calculates the Average Rating
-        double average = (rating1 + rating2 + rating3 + rating4 + rating5) / 5.0;
+        double average = (ratings[0] + ratings[1] + ratings[2] + ratings[3] + ratings[4]) / 5.0;
         System.out.println("\nYour average movie rating is: " + average);
 
         // Implement Rating Classification using if-else statements
@@ -45,48 +49,48 @@ public class MovieRatingSystem {
         }
 
         // Check for a Favorite Movie using nested if statements
-        boolean foundMasterpiece = (rating1 == 10 || rating2 == 10 || rating3 == 10 || rating4 == 10 || rating5 == 10); // boolean statements to check if any of the ratings of the movies were a 10
-        boolean foundDisappointment = (rating1 < 4 || rating2 < 4 || rating3 < 4 || rating4 < 4 || rating5 < 4); // boolean statement to check if any of the ratings for the movies is 4 or below
+        boolean foundMasterpiece = (ratings[0] == 10 || ratings[1] == 10 || ratings[2] == 10 || ratings[3] == 10 || ratings[4] == 10); // boolean statements to check if any of the ratings of the movies were a 10
+        boolean foundDisappointment = (ratings[0] < 4 || ratings[1] < 4 || ratings[2] < 4 || ratings[3] < 4 || ratings[4] < 4); // boolean statement to check if any of the ratings for the movies is 4 or below
 
         if (foundMasterpiece) {
-            if (rating1 == 10) {
-                System.out.println("Wow! You found a masterpiece: " + movie1 + " with a rating of " + rating1);
+            if (ratings[0] == 10) {
+                System.out.println("Wow! You found a masterpiece: " + movies[0] + " with a rating of " + ratings[0]);
             }
-            if (rating2 == 10) {
-                System.out.println("Wow! You found a masterpiece: " + movie2 + " with a rating of " + rating2);
+            if (ratings[1] == 10) {
+                System.out.println("Wow! You found a masterpiece: " + movies[1] + " with a rating of " + ratings[1]);
             }
-            if (rating3 == 10) {
-                System.out.println("Wow! You found a masterpiece: " + movie3 + " with a rating of " + rating3);
+            if (ratings[2] == 10) {
+                System.out.println("Wow! You found a masterpiece: " + movies[2] + " with a rating of " + ratings[2]);
             }
-            if (rating4 == 10) {
-                System.out.println("Wow! You found a masterpiece: " + movie4 + " with a rating of " + rating4);
+            if (ratings[3] == 10) {
+                System.out.println("Wow! You found a masterpiece: " + movies[3] + " with a rating of " + ratings[3]);
             }
-            if (rating5 == 10) {
-                System.out.println("Wow! You found a masterpiece: " + movie5 + " with a rating of " + rating5);
+            if (ratings[4] == 10) {
+                System.out.println("Wow! You found a masterpiece: " + movies[4] + " with a rating of " + ratings[4]);
             }
         }
 
         if (foundDisappointment) {
-            if (rating1 < 4) {
-                System.out.println("That movie didn't impress you much: " + movie1 + " with a rating of " + rating1);
+            if (ratings[0] < 4) {
+                System.out.println("That movie didn't impress you much: " + movies[0] + " with a rating of " + ratings[0]);
             }
-            if (rating2 < 4) {
-                System.out.println("That movie didn't impress you much: " + movie2 + " with a rating of " + rating2);
+            if (ratings[1] < 4) {
+                System.out.println("That movie didn't impress you much: " + movies[1] + " with a rating of " + ratings[1]);
             }
-            if (rating3 < 4) {
-                System.out.println("That movie didn't impress you much: " + movie3 + " with a rating of " + rating3);
+            if (ratings[2] < 4) {
+                System.out.println("That movie didn't impress you much: " + movies[2] + " with a rating of " + ratings[2]);
             }
-            if (rating4 < 4) {
-                System.out.println("That movie didn't impress you much: " + movie4 + " with a rating of " + rating4);
+            if (ratings[3] < 4) {
+                System.out.println("That movie didn't impress you much: " + movies[3] + " with a rating of " + ratings[3]);
             }
-            if (rating5 < 4) {
-                System.out.println("That movie didn't impress you much: " + movie5 + " with a rating of " + rating5);
+            if (ratings[4] < 4) {
+                System.out.println("That movie didn't impress you much: " + movies[4] + " with a rating of " + ratings[4]);
             }
         }
 
         // Identify Consistent Ratings using logical operators
-        boolean allHighRatings = (rating1 >= 7 && rating2 >= 7 && rating3 >= 7 && rating4 >= 7 && rating5 >= 7); 
-        boolean veryLowRating = (rating1 < 3 || rating2 < 3 || rating3 < 3 || rating4 < 3 || rating5 < 3);
+        boolean allHighRatings = (ratings[0] >= 7 && ratings[1] >= 7 && ratings[2] >= 7 && ratings[3] >= 7 && ratings[4] >= 7); 
+        boolean veryLowRating = (ratings[0] < 3 || ratings[1] < 3 || ratings[2] < 3 || ratings[3] < 3 || ratings[4] < 3);
 
         if (allHighRatings) {
             System.out.println("You seem to enjoy most movies.");
